@@ -1,3 +1,29 @@
+ 
+/*menu de arribita y banner y todo rey*/
+#banner{
+  background-color: rgb(161, 161, 161);
+}
+
+.imagen{
+  padding: 2%;
+}
+#circulo{
+  width: 50% !important; 
+  height: 100%px !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+#btn_login{
+  margin-left: 80%;
+  margin-top: 50px;
+}
+
+
+
+
 .card{
     margin: 40px !important; 
 }
@@ -61,4 +87,4 @@
     color:#ffffff;
     margin-bottom:0;
   }
-  
+ 
