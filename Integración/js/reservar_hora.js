@@ -6,8 +6,6 @@ botonEnviar.addEventListener("click", function (evento) {
   var contact = document.getElementById("contact").value;
   var message = document.getElementById("message").value;
   var animal = document.getElementsByName("animales")[0].value;
-  var otroAnimal = document.getElementById("otro-animal");
-  var otroAnimalText = document.getElementById("otro-animal-text");
 
   var ownerError = document.getElementById("owner-error");
   var petError = document.getElementById("pet-error");
