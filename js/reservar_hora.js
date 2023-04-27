@@ -1,13 +1,15 @@
 var botonEnviar = document.getElementById("boton-enviar");
 botonEnviar.addEventListener("click", function (evento) {
 
+  //Definición de Datos
+
   var owner = document.getElementById("owner").value;
   var pet = document.getElementById("pet").value;
   var contact = document.getElementById("contact").value;
   var message = document.getElementById("message").value;
   var animal = document.getElementsByName("animales")[0].value;
-  var otroAnimal = document.getElementById("otro-animal");
-  var otroAnimalText = document.getElementById("otro-animal-text");
+  
+  //Definición de Errores
 
   var ownerError = document.getElementById("owner-error");
   var petError = document.getElementById("pet-error");
@@ -15,11 +17,15 @@ botonEnviar.addEventListener("click", function (evento) {
   var messageError = document.getElementById("message-error");
   var animalError = document.getElementById("animal-error");
 
+  //Los errores se inicializan vacíos
+
   ownerError.innerHTML = "";
   petError.innerHTML = "";
   contactError.innerHTML = "";
   messageError.innerHTML = "";
   animalError.innerHTML = "";
+
+  //Si los campos están vacíos, se agrega el error automáticamente
 
   if (owner == "") {
     ownerError.innerHTML = "Este campo es requerido";
@@ -40,7 +46,8 @@ botonEnviar.addEventListener("click", function (evento) {
   //Prevenir el envío del formulario si hay errores
   if (owner == "" || pet == "" || animal == "Seleccione una opción" || contact == "" || message == "") {
     evento.preventDefault();
-  } else {
+  } 
+  else {
     Swal.fire(
       '¡Enviado!',
       'Su formulario ha sido enviado correctamente.',
