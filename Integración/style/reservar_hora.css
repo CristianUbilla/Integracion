@@ -105,7 +105,7 @@ a {
     transform: scale(0.95);
   }
   
-  input[type=text] {
+  input[type=text], input[type=textarea] {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -219,6 +219,13 @@ a {
     -moz-animation-delay: 1s;
     animation-delay: 1s;
   }
+
+
+  .fadeIn.fiveth {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    animation-delay: 1.2;
+  }
   
   /* Simple CSS3 Fade-in Animation */
   .underlineHover:after {
@@ -311,4 +318,5 @@ a {
     color:#ffffff;
     margin-bottom:0;
   }
+  
   
