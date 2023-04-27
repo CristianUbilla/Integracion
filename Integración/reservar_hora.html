@@ -60,12 +60,28 @@
             </div>
 
             <!-- Login Form -->
-            <form>
+            <form id="formulario">
                 <input type="text" id="owner" class="fadeIn second" name="owner" placeholder="Dueño">
+                <div id="owner-error" class="error"></div>
                 <input type="text" id="pet" class="fadeIn third" name="pet" placeholder="Nombre del Paciente/Mascota">
-                <input type="text" id="contact" class="fadeIn fourth" name="pet" placeholder="Número de contacto o Email">
-                <input type="text" id="message" class="fadeIn fiveth" name="message" placeholder="Motivo de consulta">
-                <input type="submit" class="fadeIn fourth" value="Agendar mi hora">
+                <div id="pet-error" class="error"></div>
+                <select name="animales" class="fadeIn fourth">
+                    <option>Seleccione una opción</option>
+                    <option>Canino</option>
+                    <option>Felino</option>
+                    <option>Roedor</option>
+                    <option>Ave</option>
+                    <option>Pez</option>
+                    <option>Equino</option>
+                    <option>Otros</option>
+                </select>
+                <div id="animal-error" class="error"></div>
+                <input type="text" id="contact" class="fadeIn fiveth" name="contact"
+                    placeholder="Número de contacto o Email">
+                <div id="contact-error" class="error"></div>
+                <input type="text" id="message" class="fadeIn sixth" name="message" placeholder="Motivo de consulta">
+                <div id="message-error" class="error"></div>
+                <input type="button" class="fadeIn fourth" value="Agendar mi hora" id="boton-enviar">
             </form>
         </div>
     </div>
@@ -89,6 +105,8 @@
             <p class="copyright">Huellas del Corazón © 2023</p>
         </footer>
     </div>
+    <script src="js/reservar_hora.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
