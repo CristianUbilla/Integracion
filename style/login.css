@@ -334,3 +334,8 @@ a {
   color:#ffffff;
   margin-bottom:0;
 }
+
+
+.error {
+  color: red;
+}
