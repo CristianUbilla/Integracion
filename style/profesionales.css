@@ -21,6 +21,23 @@
   margin-top: 50px;
 }
 
+
+
+.card{
+  margin: 40px !important; 
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+}
+
+.card-img-top{
+  margin-top: 20px;
+  margin-left: 42px;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
+
 /*footer*/
 .footer-basic {
   padding:43px 0;
