@@ -47,10 +47,16 @@
                       <a class="nav-link" href="quienes_somos.html">Quiénes Somos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="reservar_hora.html">Reservar Hora</a>
+                        <a class="nav-link" href="profesionales.html">Profesionales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profesionales.html">Profesionales</a>
+                        <a class="nav-link" style="display: none;" id="reservar" href="reservar_hora.html">Reservar Hora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="display: none;" id="reservar2" href="consultar_hora.html">Consultar Hora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="display: none;" id="reservar3" href="consultar_hora_medicos.html">Consultar Hora Medicos</a>
                     </li>
                   </ul>
             </div>
@@ -116,7 +122,19 @@
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                console.log("iniciado")
+                const n = 3;
+ 
+                const vali = email.substring(email.length - n);
+
+                if(vali == "com"){
+                    console.log("iniciado")
+                    document.getElementById("reservar").style.display = "block";
+                    document.getElementById("reservar2").style.display = "block";}
+                else{
+                    document.getElementById("reservar").style.display = "block";
+                    document.getElementById("reservar2").style.display = "block";
+                    document.getElementById("reservar3").style.display = "block";
+                }
             })
             .catch((error) => {
                 const errorCode = error.code;
