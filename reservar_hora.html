@@ -83,6 +83,8 @@
                 <div id="animal-error" class="error"></div>
                 <input type="text" id="contact" class="fadeIn fiveth" name="contact" placeholder="Email">
                 <div id="contact-error" class="error"></div>
+                <input type="date" name="" id="date" class="fadeIn third" name="date" min="2023-01-01" max="2034-12-31">
+                <div id="date-error" class="error"></div>
                 <input type="text" id="message" class="fadeIn sixth" name="message" placeholder="Motivo de consulta">
                 <div id="message-error" class="error"></div>
                 <input type="button" class="fadeIn fourth" value="Agendar mi hora" id="boton-enviar">
@@ -135,6 +137,7 @@
         var contact = document.querySelector("#contact");
         var message = document.querySelector("#message");
         var animals = document.querySelector("#animals");
+        var date = document.querySelector("#date");
         var btn_enviar = document.querySelector("#boton-enviar");
 
         //Validaciones por si los campos no están rellenos
@@ -144,8 +147,10 @@
         var contactError = document.getElementById("contact-error");
         var messageError = document.getElementById("message-error");
         var animalError = document.getElementById("animal-error");
+        var dateError = document.getElementById("date-error")
 
         const expression = /[a-zA-Z0-9._-]+\@(hotmail|outlook|gmail)\.(com|es|cl)/;
+
 
         //Generador de ID
 
@@ -173,11 +178,13 @@
             if (message.value == "") {
                 messageError.innerHTML = "Este campo es requerido";
             }
-
             if (animals.value == "Seleccione una opción") {
                 animalError.innerHTML = "Este campo es requerido";
             }
-            if (owner.value == "" || pet.value == "" || animals.value == "Seleccione una opción" || contact.value == "" || !expression.test(contact.value) || message.value == "") {
+            if (date.value == "") {
+                dateError.innerHTML = "Este campo es requerido";
+            }
+            if (owner.value == "" || pet.value == "" || animals.value == "Seleccione una opción" || contact.value == "" || !expression.test(contact.value) || message.value == "" || date.value == "dd-mm-aaaa") {
                 Swal.fire({
                     icon: 'error',
                     title: 'Algo salió mal...',
@@ -185,12 +192,14 @@
                 })
             }
             else {
-                set(ref(db, "ficha paciente/" + stringGen()), {
+                set(ref(db, "ficha paciente/" + owner.value), {
+                    ID: stringGen(),
                     Dueño: owner.value,
                     Mascota: pet.value,
                     Contacto: contact.value,
                     Motivo_consulta: message.value,
-                    Tipo_Animal: animals.value
+                    Tipo_Animal: animals.value,
+                    Fecha_consulta: date.value
                 })
                     .then(() => {
                         Swal.fire(
