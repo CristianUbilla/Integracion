@@ -157,6 +157,7 @@ input[type=reset]:active {
 
 input[type=text],
 input[type=textarea],
+input[type=date],
 select {
   background-color: #f6f6f6;
   border: none;
