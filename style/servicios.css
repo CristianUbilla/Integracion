@@ -1,24 +1,44 @@
- 
+
 /*menu de arribita y banner y todo rey*/
+
+  
+ #circulo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    width: 40% !important; 
+    height: 60%px !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	margin-left: 180px;
+  }
+
 #banner{
-  background-color: rgb(161, 161, 161);
+background-image: linear-gradient(to bottom right, rgb(161, 161, 161), rgb(0, 0, 0));
+    background-color: rgb(161, 161, 161);
+  }
+ 
+/*weas de la navbar*/
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
+.navbar-nav .nav-item {
+  margin-right: 10rem; /* Espacio entre elementos */
+}
+/*weas de la navbar*/ 
+
+  #btn_login{
+    margin-left: 80%;
+    margin-top: 50px;
+  }
 
 .imagen{
   padding: 2%;
-}
-#circulo{
-  width: 50% !important; 
-  height: 100%px !important;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-
-
-#btn_login{
-  margin-left: 80%;
-  margin-top: 50px;
 }
 
 
