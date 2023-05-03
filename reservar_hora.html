@@ -87,7 +87,7 @@
                 <div id="date-error" class="error"></div>
                 <input type="text" id="message" class="fadeIn sixth" name="message" placeholder="Motivo de consulta">
                 <div id="message-error" class="error"></div>
-                <input type="button" class="fadeIn fourth" value="Agendar mi hora" id="boton-enviar">
+                <button type="button" class="fadeIn fourth" id="boton-enviar">Agendar mi hora</button>
             </form>
         </div>
     </div>
@@ -200,19 +200,33 @@
                     Motivo_consulta: message.value,
                     Tipo_Animal: animals.value,
                     Fecha_consulta: date.value
-                })
-                    .then(() => {
-                        Swal.fire(
-                            '¡Enviado!',
-                            'Su formulario ha sido enviado correctamente.',
-                            'success'
-                        )
+                }).then(() => {
+                        let timerInterval
+                        Swal.fire({
+                            title: 'Redireccionando...',
+                            html: 'La página se está cargando!',
+                            didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                })
+                                window.location.href = "https://www.flow.cl/btn.php?token=id8u6bl"
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log('I was closed by the timer')
+                            }
+                        })
                     })
                     .catch((error) => {
                         alert(error)
                     });
             }
-
         }
         btn_enviar.addEventListener('click', insertData)
     </script>
