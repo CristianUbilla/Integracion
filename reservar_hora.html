@@ -22,39 +22,54 @@
     <div class="container-fluid" id="banner">
         <div class="row">
             <div class="col-sm">
-                <div>
+            </div>
+		
+            <div class="col-sm">
+			    <div>
                     <img src="img/Logo.png" alt="uwu" id="circulo">
                 </div>
             </div>
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-                <a class="btn btn-primary" href="login.html" role="button" id="btn_login">Acceder</a>
+			
+            <div class="col-sm" >
+                <a class="btn btn-outline-secondary" href="login.html" role="button" id="btn_login">Acceder</a>
             </div>
         </div>
     </div>
 
 </header>
 
-<body style="background-image: url(img/fondo_reservar_hora.webp); background-size: cover;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav" id="menu">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="quienes_somos.html">Quienes somos</a>
-                    </li>
+<body style="background-color: #e7e7e7;">
 
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-------------------->
+<!-- INICIO NAVBAR -->
+<!-------------------->
+	
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74DBA3;" >
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" >
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-dark" href="index.html">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-dark" href="quienes_somos.html">¿QUIENES SOMOS?</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-dark" href="servicios.html">SERVICIOS</a>
+        </li>		
+        <li class="nav-item">
+          <a class="btn btn-outline-dark" href="reservar_hora.html">RESERVAR HORA</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-dark" href="profesionales.html">PROFESIONALES</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-------------------->
+<!-- FINAL NAVBAR -->
+<!-------------------->
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -147,10 +162,8 @@
         var contactError = document.getElementById("contact-error");
         var messageError = document.getElementById("message-error");
         var animalError = document.getElementById("animal-error");
-        var dateError = document.getElementById("date-error")
 
         const expression = /[a-zA-Z0-9._-]+\@(hotmail|outlook|gmail)\.(com|es|cl)/;
-
 
         //Generador de ID
 
@@ -178,13 +191,13 @@
             if (message.value == "") {
                 messageError.innerHTML = "Este campo es requerido";
             }
+
+
             if (animals.value == "Seleccione una opción") {
                 animalError.innerHTML = "Este campo es requerido";
             }
-            if (date.value == "") {
-                dateError.innerHTML = "Este campo es requerido";
-            }
-            if (owner.value == "" || pet.value == "" || animals.value == "Seleccione una opción" || contact.value == "" || !expression.test(contact.value) || message.value == "" || date.value == "dd-mm-aaaa") {
+            if (owner.value == "" || pet.value == "" || animals.value == "Seleccione una opción" || contact.value == "" || !expression.test(contact.value) || message.value == "") {
+
                 Swal.fire({
                     icon: 'error',
                     title: 'Algo salió mal...',
@@ -192,14 +205,16 @@
                 })
             }
             else {
-                set(ref(db, "ficha paciente/" + owner.value), {
-                    ID: stringGen(),
+
+                set(ref(db, "ficha paciente/" + stringGen()), {
+
                     Dueño: owner.value,
                     Mascota: pet.value,
                     Contacto: contact.value,
                     Motivo_consulta: message.value,
-                    Tipo_Animal: animals.value,
-                    Fecha_consulta: date.value
+
+                    Tipo_Animal: animals.value
+
                 })
                     .then(() => {
                         Swal.fire(
