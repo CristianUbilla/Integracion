@@ -47,16 +47,10 @@
                       <a class="nav-link" href="quienes_somos.html">Quiénes Somos</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" style="display: none;" href="reservar_hora.html">Reservar Hora</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="profesionales.html">Profesionales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="display: none;" id="reservar" href="reservar_hora.html">Reservar Hora</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="display: none;" id="reservar2" href="consultar_hora.html">Consultar Hora</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="display: none;" id="reservar3" href="consultar_hora_medicos.html">Consultar Hora Medicos</a>
                     </li>
                   </ul>
             </div>
@@ -78,14 +72,14 @@
                 <div id="correo-error" class="error"></div>
                 <input type="text" id="contrasena" class="fadeIn third" name="contrasena" placeholder="Contraseña">
                 <div id="contrasena-error" class="error"></div>
-                <input type="button" class="fadeIn fourth" value="Iniciar sesión" id="login">
+                <input type="button" class="fadeIn fourth" value="Iniciar sesión" id="registrar">
             </form>
 
  
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="registrar_usuarios.html">Registrate</a>
+               
 
 
                 
@@ -96,10 +90,8 @@
     
     <script type="module">
 
-        
-
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+        import { initializeApp} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { createUserWithEmailAndPassword, getAuth } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
         const firebaseConfig = {
             apiKey: "AIzaSyDV3sJ563y6e1N567noDSBLf0unlicpYT4",
             authDomain: "huellas-del-corazon-6fbf9.firebaseapp.com",
@@ -112,39 +104,32 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        
+        document.getElementById("registrar").addEventListener('click', function(){
+            const correo = document.getElementById("correo").value
+            const contrasena = document.getElementById("contrasena").value
 
-        document.getElementById("login").addEventListener('click', function (){
-                        
-            const email = document.getElementById("correo").value 
-            const paswo = document.getElementById("contrasena").value 
-
-            signInWithEmailAndPassword(auth, email, paswo)
+            createUserWithEmailAndPassword(auth, correo, contrasena)
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                const n = 3;
- 
-                const vali = email.substring(email.length - n);
-
-                if(vali == "com"){
-                    console.log("iniciado")
-                    document.getElementById("reservar").style.display = "block";
-                    document.getElementById("reservar2").style.display = "block";}
-                else{
-                    document.getElementById("reservar").style.display = "block";
-                    document.getElementById("reservar2").style.display = "block";
-                    document.getElementById("reservar3").style.display = "block";
-                }
+                console.log("registrado")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log("no inicio")
+                console.log("no registrado")
             });
-        }
-)
+        })
 
-        
+
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+
+
+
+
     </script>
     <!-- Bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -152,7 +137,6 @@
         crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 <div class="footer-basic">
     <footer>
         <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
@@ -166,5 +150,4 @@
         <p class="copyright">Huellas del Corazón © 2023</p>
     </footer>
 </div>
-
 </html>

@@ -1,21 +1,47 @@
 
 /*menu de arribita y banner y todo rey*/
+
+  
+ #circulo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    width: 40% !important; 
+    height: 60%px !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	margin-left: 180px;
+  }
+
 #banner{
+background-image: linear-gradient(to bottom right, rgb(161, 161, 161), rgb(0, 0, 0));
     background-color: rgb(161, 161, 161);
   }
-  
+ 
+/*weas de la navbar*/
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10rem; /* Espacio entre elementos */
+}
+/*weas de la navbar*/ 
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(48%) sepia(97%) saturate(6194%) hue-rotate(129deg) brightness(94%) contrast(87%);
+}
   .imagen{
     padding: 2%;
   }
-  #circulo{
-    width: 50% !important; 
-    height: 100%px !important;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  
-  
+
+
+
   #btn_login{
     margin-left: 80%;
     margin-top: 50px;
@@ -82,3 +108,86 @@
     margin-bottom:0;
   }
   
+  
+#cuadrao {
+  margin-top: 20px;
+  margin-bottom: 150px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background: #74DBA3;
+  padding: 30px;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#cuadrao2 {
+
+  margin-top: 5px;  -webkit-border-radius: 10px 10px 10px 10px;
+  background: #74DBA3;
+  padding: auto;
+  width: auto;
+  max-width: auto;
+  position: auto;
+
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background: #74DBA3;
+  padding: auto;
+  width: auto;
+  max-width: auto;
+  position: auto;
+
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+}
+
+#cuadrao3 {
+
+  margin-top: 30px;  
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background: #74DBA3;
+  padding: auto;
+  width: auto;
+  max-width: auto;
+  position: auto;
+
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background: #74DBA3;
+  padding: auto;
+  width: auto;
+  max-width: auto;
+  position: auto;
+
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+}
+
+
+
+
+
+h1{
+	margin-left: 80px;
+	margin-right: 80px;
+	text-align: justify-content;
+	font-size: 15px;
+	line-height: 1;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2{
+	margin-left: 60px;
+	margin-right: 60px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 1.45;
+	font-family: 'Open Sans', sans-serif;
+}
+
