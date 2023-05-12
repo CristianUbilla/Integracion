@@ -62,13 +62,13 @@
     <table id="tabla-consultas">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Dueño</th>
                 <th>Mascota</th>
                 <th>Tipo Mascota</th>
                 <th>Fecha de Consulta</th>
                 <th>Motivo</th>
                 <th>Contacto</th>
+                <th>Doctor</th>
             </tr>
         </thead>
         <tbody>
@@ -111,13 +111,13 @@
                         const childData = childSnapshot.val();
                         if (!insertedRows.has(childData.ID)) {
                             const row = tablaBody.insertRow();
-                            row.insertCell(0).textContent = childData.ID;
-                            row.insertCell(1).textContent = childData.Dueño;
-                            row.insertCell(2).textContent = childData.Mascota;
-                            row.insertCell(3).textContent = childData.Tipo_Animal;
-                            row.insertCell(4).textContent = childData.Fecha_consulta;
-                            row.insertCell(5).textContent = childData.Motivo_consulta;
-                            row.insertCell(6).textContent = childData.Contacto;
+                            row.insertCell(0).textContent = childData.Dueño;
+                            row.insertCell(1).textContent = childData.Mascota;
+                            row.insertCell(2).textContent = childData.Tipo_Animal;
+                            row.insertCell(3).textContent = childData.Fecha_consulta;
+                            row.insertCell(4).textContent = childData.Motivo_consulta;
+                            row.insertCell(5).textContent = childData.Contacto;
+                            row.insertCell(6).textContent = childData.Doctor;
                         }
                     });
                 }

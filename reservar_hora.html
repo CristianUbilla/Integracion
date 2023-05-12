@@ -96,6 +96,14 @@
                     <option>Otros</option>
                 </select>
                 <div id="animal-error" class="error"></div>
+                <select id="doctor" name="doctor" class="fadeIn fourth">
+                    <option>Seleccione a un médico</option>
+                    <option>Juan De la Cruz Villaroel (Animales mayores)</option>
+                    <option>Javiera Maturana (Animales menores)</option>
+                    <option>Johan Sandoval (Animales exóticos)</option>
+                    <option>Camila Valdebenito (Atención general)</option>
+                </select>
+                <div id="doctor-error" class="error"></div>
                 <input type="text" id="contact" class="fadeIn fiveth" name="contact" placeholder="Email">
                 <div id="contact-error" class="error"></div>
                 <input type="date" name="" id="date" class="fadeIn third" name="date" min="2023-01-01" max="2034-12-31">
@@ -154,6 +162,7 @@
         var message = document.querySelector("#message");
         var animals = document.querySelector("#animals");
         var date = document.querySelector("#date");
+        var doctor = document.querySelector("#doctor");
         var btn_enviar = document.querySelector("#boton-enviar");
 
         //Validaciones por si los campos no están rellenos
@@ -163,6 +172,8 @@
         var contactError = document.getElementById("contact-error");
         var messageError = document.getElementById("message-error");
         var animalError = document.getElementById("animal-error");
+        var dateError = document.getElementById("date-error");
+        var doctorError = document.getElementById("doctor-error");
 
         const expression = /[a-zA-Z0-9._-]+\@(hotmail|outlook|gmail)\.(com|es|cl)/;
 
@@ -192,10 +203,14 @@
             if (message.value == "") {
                 messageError.innerHTML = "Este campo es requerido";
             }
-
-
+            if (date.value == "") {
+                messageError.innerHTML = "Este campo es requerido";
+            }
             if (animals.value == "Seleccione una opción") {
                 animalError.innerHTML = "Este campo es requerido";
+            }
+            if (doctor.value == "Seleccione a un médico") {
+                messageError.innerHTML = "Este campo es requerido";
             }
             if (owner.value == "" || pet.value == "" || animals.value == "Seleccione una opción" || contact.value == "" || !expression.test(contact.value) || message.value == "") {
 
@@ -214,7 +229,8 @@
                     Contacto: contact.value,
                     Motivo_consulta: message.value,
                     Tipo_Animal: animals.value,
-                    Fecha_consulta: date.value
+                    Fecha_consulta: date.value,                    
+                    Doctor: doctor.value
                 }).then(() => {
                         let timerInterval
                         Swal.fire({
