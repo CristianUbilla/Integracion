@@ -25,22 +25,24 @@
 <header>
     <div class="container-fluid" id="banner">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-md">
             </div>
-		
-            <div class="col-sm">
-			    <div>
-                    <img src="img/Logo.png" alt="uwu" id="circulo">
+            <div class="col-md">
+                <div class="text-center">
+				<br>
+                    <img src="img/Logo.png" alt="uwu"  style="max-width: 50%;">
+					<br><br>
                 </div>
             </div>
-			
-            <div class="col-sm" >
+            <div class="col-md text-end">
+			<br>
                 <a class="btn btn-outline-secondary" href="registrar_usuarios.html" role="button" id="btn_login">Registrar</a>
+				<br>
             </div>
         </div>
     </div>
-    
 </header>
+
 
 <body style="background-color: #e7e7e7;">
 
@@ -48,9 +50,12 @@
 <!-- INICIO NAVBAR -->
 <!-------------------->
 	
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74DBA3;" >
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74DBA3;">
   <div class="container-fluid">
-    <div class="collapse navbar-collapse" >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a class="btn btn-outline-dark" href="index.html">INICIO</a>
@@ -71,93 +76,71 @@
     </div>
   </div>
 </nav>
+
 <!-------------------->
 <!-- FINAL NAVBAR -->
 <!-------------------->
 <div class="container-fluid">
-<!--------------------->
-<!-- INICIO CAROUSEL -->
-<!--------------------->
-<div class="row">
-
-<div class="col-3" >
-	<div  id="cuadrao3">
-
-		<br>
-		<img src="img/index_icono1.png" width="50" height="50" >
-		<h1> Para una mejor atención tenemos hospital con áreas separadas para perros y gatos</h1>
-		<br>
-	</div>
-	
-	<div margin-left="100px;" id="cuadrao2">
-		<br>
-		<img src="img/index_icono2.png" width="50" height="50" >
-		<h1> Traiga a su mascota a control sano, todas sus dudas con su Mascota la resolvemos aquí en Huellas del corazon</h1>
-		<br>
-	</div>
-	
-	<div margin-left="100px;" id="cuadrao2">
-		<br>
-		<img src="img/index_icono3.png" width="50" height="50" >
-		<h1> Ofrecemos atencion de urgencia para sus mascotas, solo debe traerlo y estaremos disponibles para usted</h1>
-		<br>
-	</div>
-	
+    <!-- INICIO CAROUSEL -->
+    <div class="row">
+        <div class="col-lg-3">
+            <div id="cuadrao3">
+                <br>
+                <img src="img/index_icono1.png" width="50" height="50">
+                <h1>Para una mejor atención tenemos hospital con áreas separadas para perros y gatos</h1>
+                <br>
+            </div>
+            <div id="cuadrao2">
+                <br>
+                <img src="img/index_icono2.png" width="50" height="50">
+                <h1>Traiga a su mascota a control sano, todas sus dudas con su Mascota la resolvemos aquí en Huellas del corazon</h1>
+                <br>
+            </div>
+            <div id="cuadrao2">
+                <br>
+                <img src="img/index_icono3.png" width="50" height="50">
+                <h1>Ofrecemos atención de urgencia para sus mascotas, solo debe traerlo y estaremos disponibles para usted</h1>
+                <br>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div id="cuadrao">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/carousel_index_1.jpg" class="d-block w-100" width="100%" height="auto">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/carousel_index_2.jpg" class="d-block w-100" width="100%" height="auto">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/carousel_index_3.jpg" class="d-block w-100" width="100%" height="auto">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev darken-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next darken-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div id="cuadrao3">
+                <br><br>
+                <img src="img/index_icono4.png" width="50" height="50"><br><br>
+                <h2>En Huellas del Corazón busca mejorar la calidad de vida de los animales de compañía ofreciendo atención médica veterinaria de alta calidad. Trabajan en colaboración con cada mascota y su familia para crear un plan de tratamiento personalizado y se esfuerzan por estar actualizados en las últimas técnicas y tecnologías veterinarias. Su objetivo es promover la salud y el bienestar de todas las mascotas y brindar apoyo y educación a la comunidad de amantes de los animales.</h2>
+                <hr>
+                <h2>CONTACTO</h2>
+                <h2>+569 943123321</h2>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-<div class="col-6">
-
-		<div id="cuadrao">
-
-			<div id="carouselExampleFade" class="carousel slide carousel-fade">
-			
-			  <div class="carousel-inner">
-				<div class="carousel-item active">
-				  <img src="img/carousel_index_1.jpg" class="d-block w-100" width="900" height="400">
-				</div>
-				<div class="carousel-item">
-				  <img src="img/carousel_index_2.jpg" class="d-block w-100" width="900" height="400">
-				</div>
-				<div class="carousel-item">
-				  <img src="img/carousel_index_3.jpg" class="d-block w-100" width="900" height="400">
-				</div>
-				
-			  </div>
-			  
-			<button class="carousel-control-prev darken-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next darken-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="visually-hidden">Next</span>
-			</button>
-			  
-			</div>
-		</div> 
-
-</div>
-
-<div class="col-3">
-	<div  id="cuadrao3">
-		
-		<br><br>
-		<img src="img/index_icono4.png" width="50" height="50" ><br><br>
-		<h2> En Huellas del Corazón busca mejorar la calidad de vida de los 
-				animales de compañía ofreciendo atención médica veterinaria de alta calidad. Trabajan en colaboración con cada mascota y 
-				su familia para crear un plan de tratamiento personalizado y se esfuerzan por estar actualizados en las últimas técnicas y tecnologías veterinarias. 
-				Su objetivo es promover la salud y el bienestar de todas las mascotas y brindar apoyo y educación a la comunidad de amantes de los animales.</h2>
-		<hr>
-
-		<h2> CONTACTO</h2>
-
-		<h2> +569 943123321</h2>
-
-	</div>
-</div>
-</div>
-</div>
 <!--------------------->
 <!-- FUNAL CAROUSEL -->
 <!--------------------->
