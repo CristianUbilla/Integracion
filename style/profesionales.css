@@ -40,22 +40,49 @@ background-image: linear-gradient(to bottom right, rgb(161, 161, 161), rgb(0, 0,
   margin-top: 50px;
 }
 
+/*imagenes*/
 
-
-.card{
+.card {
   margin: 40px !important; 
   border-style: solid;
   border-color: #000000;
   border-width: 2px;
 }
 
-.card-img-top{
+.card-img-top {
   margin-top: 20px;
   margin-left: 42px;
   height: 200px;
   width: 200px;
   border-radius: 100%;
 }
+
+@media (max-width: 768px) {
+  .card {
+    margin: 20px !important;
+  }
+
+  .card-img-top {
+    margin-top: 10px;
+    margin-left: 21px;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin: 10px !important;
+  }
+
+  .card-img-top {
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
 
 /*footer*/
 .footer-basic {
