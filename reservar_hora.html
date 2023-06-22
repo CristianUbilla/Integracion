@@ -25,15 +25,16 @@
             </div>
             <div class="col-md">
                 <div class="text-center">
-				<br>
-                    <img src="img/Logo.png" alt="uwu"  style="max-width: 50%;">
-					<br><br>
+                    <br>
+                    <img src="img/Logo.png" alt="uwu" style="max-width: 50%;">
+                    <br><br>
                 </div>
             </div>
             <div class="col-md text-end">
-			<br>
-                <a class="btn btn-outline-secondary" href="registrar_usuarios.html" role="button" id="btn_login">Registrar</a>
-				<br>
+                <br>
+                <a class="btn btn-outline-secondary" href="registrar_usuarios.html" role="button"
+                    id="btn_login">Registrar</a>
+                <br>
             </div>
         </div>
     </div>
@@ -42,40 +43,41 @@
 
 <body style="background-color: #e7e7e7;">
 
-<!-------------------->
-<!-- INICIO NAVBAR -->
-<!-------------------->
-	
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74DBA3;">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" href="index.html">INICIO</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" href="quienes_somos.html">¿QUIENES SOMOS?</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" href="servicios.html">SERVICIOS</a>
-        </li>		
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" href="reservar_hora.html">RESERVAR/CONSULTAR HORA</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" href="profesionales.html">PROFESIONALES</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-------------------->
+    <!-- INICIO NAVBAR -->
+    <!-------------------->
 
-<!-------------------->
-<!-- FINAL NAVBAR -->
-<!-------------------->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #74DBA3;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="quienes_somos.html">¿QUIENES SOMOS?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="servicios.html">SERVICIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="reservar_hora.html">RESERVAR/CONSULTAR HORA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="profesionales.html">PROFESIONALES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-------------------->
+    <!-- FINAL NAVBAR -->
+    <!-------------------->
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -109,7 +111,8 @@
                 <input type="text" id="message" class="fadeIn sixth" name="message" placeholder="Motivo de consulta">
                 <div id="message-error" class="error"></div>
                 <button type="button" class="fadeIn fourth" id="boton-enviar">Agendar mi hora</button>
-                <button type="button" class="fadeIn fourth" onclick="location.href='consultar_hora.html'">Consultar mi hora</button>
+                <button type="button" class="fadeIn fourth" onclick="location.href='consultar_hora.html'">Consultar mi
+                    hora</button>
             </form>
         </div>
     </div>
@@ -222,33 +225,33 @@
                     Tipo_Animal: animals.value,
                     Fecha_consulta: date.value
                 }).then(() => {
-                        let timerInterval
-                        Swal.fire({
-                            title: 'Redireccionando...',
-                            html: 'La página se está cargando!',
-                            didOpen: () => {
-                                Swal.showLoading()
-                                const b = Swal.getHtmlContainer().querySelector('b')
-                                timerInterval = setInterval(() => {
-                                    b.textContent = Swal.getTimerLeft()
-                                })
-                                window.location.href = "https://www.flow.cl/btn.php?token=id8u6bl"
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval)
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log('I was closed by the timer')
-                            }
-                        })
+                    let timerInterval
+                    Swal.fire({
+                        title: 'Redireccionando...',
+                        html: 'La página se está cargando!',
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                            })
+                            window.location.href = "https://www.flow.cl/btn.php?token=id8u6bl"
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
                     })
+                })
                     .catch((error) => {
                         alert(error)
                     });
             }
-        } 
+        }
         btn_enviar.addEventListener('click', insertData)
     </script>
 
